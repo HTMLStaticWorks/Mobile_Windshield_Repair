@@ -661,20 +661,6 @@
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
             }
-
-            // Theme Toggle Label sync
-            const themeBtn = document.querySelector('.theme-toggle');
-            if(themeBtn) {
-                const updateLabel = () => {
-                    const isDark = document.body.classList.contains('dark-mode');
-                    themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i> Light' : '<i class="fas fa-moon"></i> Dark';
-                };
-                themeBtn.addEventListener('click', () => {
-                    // Logic is handled in main.js, we just update label
-                    setTimeout(updateLabel, 50);
-                });
-                updateLabel();
-            }
         });
     </script>
 </body>
