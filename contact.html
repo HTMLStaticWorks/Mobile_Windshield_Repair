@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Mobile Windshield Repair</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/images/logo/logo.svg" alt="Mobile Windshield Repair Logo" width="32" height="32">
+            <span>Mobile Windshield Repair</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#" id="rtl-toggle" class="rtl-btn">RTL</a>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>We Are Here to Help</h1>
+            <p>Get in touch for immediate assistance, custom quotes, or to schedule a mobile technician.</p>
+        </div>
+    </header>
+
+    <!-- Section 1: contact info cards -->
+    <section class="contact-cards">
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="card contact-card" style="padding: 2.5rem;">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80" alt="Phone" class="card-img" style="height: 150px; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 class="card-title">Call Us</h3>
+                <p>1-800-GLASS-FIX</p>
+                <div class="btn-wrapper"><a href="tel:180045277349" class="btn">Call Now</a></div>
+            </div>
+            <div class="card contact-card" style="padding: 2.5rem;">
+                <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=400&q=80" alt="Email" class="card-img" style="height: 150px; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 class="card-title">Email Us</h3>
+                <p>info@windshieldrepair.com</p>
+                <div class="btn-wrapper"><a href="mailto:info@windshieldrepair.com" class="btn">Send Email</a></div>
+            </div>
+            <div class="card contact-card" style="padding: 2.5rem;">
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=400&q=80" alt="Visit" class="card-img" style="height: 150px; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 class="card-title">Location</h3>
+                <p>123 Glass St, Auto City, NY</p>
+                <div class="btn-wrapper"><a href="#map" class="btn">View Map</a></div>
+            </div>
+            <div class="card contact-card" style="padding: 2.5rem;">
+                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=400&q=80" alt="Hours" class="card-img" style="height: 150px; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 class="card-title">Business Hours</h3>
+                <p>Mon - Sat: 8am - 6pm</p>
+                <div class="btn-wrapper"><a href="booking.html" class="btn">Schedule</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 & 3: Combined Contact & Map -->
+    <section class="contact-main">
+        <div class="contact-main-grid">
+            <!-- Left Side: Form -->
+            <div class="contact-form-side">
+                <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                    <h2>Send Us a Message</h2>
+                    <p>Our team typically responds within 1 business hour.</p>
+                </div>
+                <div class="card" style="padding: 2.5rem;">
+                    <form action="#">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Your Name</label>
+                                <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;" required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Your Email</label>
+                                <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;" required>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.2rem;">
+                            <label style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Phone Number</label>
+                            <input type="tel" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;" required>
+                        </div>
+                        <div class="form-message-wrapper">
+                            <label style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Message</label>
+                            <textarea style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <div class="btn-wrapper" style="justify-content: flex-start;">
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Side: Map -->
+            <div class="contact-map-side">
+                <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                    <h2>Find Us</h2>
+                    <p>Our mobile service covers a 50-mile radius.</p>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27!2d-74.2598!3d40.6976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <!-- Footer logic repeated -->
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <a href="index.html" class="nav-brand">
+                        <img src="assets/images/logo/logo.svg" alt="Logo" width="32" height="32">
+                        <span>Mobile Windshield Repair</span>
+                    </a>
+                </div>
+                <p>Providing premium mobile auto glass services with a focus on quality, safety, and customer convenience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="booking.html">Book Repair</a></li>
+                    <li><a href="blog.html">Blog & Tips</a></li>
+                    <li><a href="rtl.html">RTL Version</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Chip Repair</a></li>
+                    <li><a href="services.html">Crack Repair</a></li>
+                    <li><a href="services.html">Full Replacement</a></li>
+                    <li><a href="services.html">ADAS Recalibration</a></li>
+                    <li><a href="insurance.html">Insurance Claims</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 1-800-GLASS-FIX</li>
+                    <li><i class="fas fa-envelope"></i> info@windshieldrepair.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Glass St, Auto City</li>
+                    <li><i class="fas fa-clock"></i> Mon - Sat: 8am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">&copy; 2026 Mobile Windshield Repair. All rights reserved.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validation.js"></script>
+</body>
+</html>

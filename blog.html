@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Tips | Mobile Windshield Repair</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/images/logo/logo.svg" alt="Mobile Windshield Repair Logo" width="32" height="32">
+            <span>Mobile Windshield Repair</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#" id="rtl-toggle" class="rtl-btn">RTL</a>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Expert Care Tips & Industry News</h1>
+            <p>Stay informed on how to maintain your vehicle's glass and when to seek professional help.</p>
+        </div>
+    </header>
+
+    <!-- Section 1: Featured post -->
+    <section class="featured-post">
+        <div class="card" style="display: flex; flex-direction: row; max-width: 1100px; margin: 0 auto; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80" alt="Featured Post" style="width: 50%; height: auto; min-height: 400px;">
+            <div class="card-body" style="width: 50%; text-align: left; padding: 3rem;">
+                <span style="color: var(--accent); font-weight: 700;">FEATURED</span>
+                <h2 style="margin-top: 1rem;">The Ultimate Guide to Windshield Safety</h2>
+                <p class="card-text">Learn why even a tiny chip can compromise your vehicle's structural integrity and what you should do as soon as you notice damage.</p>
+                <div class="btn-wrapper" style="justify-content: flex-start;">
+                    <a href="#" class="btn">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Latest posts -->
+    <section class="latest-posts" style="background-color: var(--white);">
+        <div class="section-title">
+            <h2>Latest Tips & Articles</h2>
+            <p>Fresh content updated weekly by our expert technicians.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Blog 2" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">ADAS Recalibration 101</h3>
+                    <p class="card-text">What is ADAS and why is it critical when replacing your new windshield on modern vehicles?</p>
+                    <div class="btn-wrapper"><a href="#" class="btn">Read More</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/DIY vs Professional Repair.png" alt="Blog 3" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">DIY vs Professional Repair</h3>
+                    <p class="card-text">We compare home repair kits to professional mobile services. The results might surprise you.</p>
+                    <div class="btn-wrapper"><a href="#" class="btn">Read More</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Winter Glass Protection.png" alt="Blog 4" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Winter Glass Protection</h3>
+                    <p class="card-text">Never pour boiling water on a frozen windshield! Discover the safe ways to defrost your car this winter.</p>
+                    <div class="btn-wrapper"><a href="#" class="btn">Read More</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 4: Newsletter signup form card -->
+    <section class="newsletter">
+        <div class="card" style="max-width: 800px; margin: 0 auto; padding: 4rem; text-align: center; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white);">
+            <h2>Join Our Newsletter</h2>
+            <p style="margin-bottom: 2rem;">Get monthly maintenance tips and exclusive discounts directly in your inbox.</p>
+            <form style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your Email Address" style="flex: 1; padding: 0.75rem; border-radius: 8px; border: none;" required>
+                <button type="submit" class="btn" style="background: var(--accent);">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <a href="index.html" class="nav-brand">
+                        <img src="assets/images/logo/logo.svg" alt="Logo" width="32" height="32">
+                        <span>Mobile Windshield Repair</span>
+                    </a>
+                </div>
+                <p>Providing premium mobile auto glass services with a focus on quality, safety, and customer convenience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="booking.html">Book Repair</a></li>
+                    <li><a href="blog.html">Blog & Tips</a></li>
+                    <li><a href="rtl.html">RTL Version</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Chip Repair</a></li>
+                    <li><a href="services.html">Crack Repair</a></li>
+                    <li><a href="services.html">Full Replacement</a></li>
+                    <li><a href="services.html">ADAS Recalibration</a></li>
+                    <li><a href="insurance.html">Insurance Claims</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 1-800-GLASS-FIX</li>
+                    <li><i class="fas fa-envelope"></i> info@windshieldrepair.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Glass St, Auto City</li>
+                    <li><i class="fas fa-clock"></i> Mon - Sat: 8am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">&copy; 2026 Mobile Windshield Repair. All rights reserved.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

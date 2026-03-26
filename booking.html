@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Repair | Mobile Windshield Repair</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/images/logo/logo.svg" alt="Mobile Windshield Repair Logo" width="32" height="32">
+            <span>Mobile Windshield Repair</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html" class="active">Booking</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#" id="rtl-toggle" class="rtl-btn">RTL</a>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero"
+        style="background-image: url('https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Ready to Fix Your Glass?</h1>
+            <p>Fill out the form below and we'll send a technician right to your doorstep.</p>
+            <div class="btn-wrapper"><a href="#booking-start" class="btn">Get Started</a></div>
+        </div>
+    </header>
+
+    <!-- Section 1: Multi-step booking form -->
+    <section class="booking-section" id="booking-start">
+        <div class="section-title">
+            <h2>Book Your Service</h2>
+            <p>Step-by-step scheduling for your convenience.</p>
+        </div>
+        <div class="card" style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+            <div class="progress-container">
+                <div class="progress-bar" id="booking-progress"></div>
+            </div>
+            <form id="booking-form">
+                <!-- Step 1: Vehicle -->
+                <div class="form-step active">
+                    <h3>Step 1: Vehicle Information</h3>
+                    <div class="form-group">
+                        <label>Vehicle Make</label>
+                        <input type="text" placeholder="e.g. Toyota" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Model</label>
+                        <input type="text" placeholder="e.g. Camry" required>
+                    </div>
+                    <div class="btn-wrapper"><button type="button" class="btn next-btn">Next Step</button></div>
+                </div>
+                <!-- Step 2: Damage -->
+                <div class="form-step">
+                    <h3>Step 2: Damage Details</h3>
+                    <div class="form-group">
+                        <label>Service Type</label>
+                        <select required>
+                            <option value="">Select Service</option>
+                            <option value="chip">Chip Repair</option>
+                            <option value="crack">Crack Repair</option>
+                            <option value="replace">Full Replacement</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Damage Location</label>
+                        <select required>
+                            <option value="front">Front Windshield</option>
+                            <option value="rear">Rear Glass</option>
+                            <option value="side">Side Window</option>
+                        </select>
+                    </div>
+                    <div class="btn-wrapper" style="gap: 1rem;">
+                        <button type="button" class="btn prev-btn btn-outline"
+                            style="background: var(--dark-surface);">Back</button>
+                        <button type="button" class="btn next-btn">Next Step</button>
+                    </div>
+                </div>
+                <!-- Step 3: Location & Time -->
+                <div class="form-step">
+                    <h3>Step 3: Location & Time</h3>
+                    <div class="form-group">
+                        <label>Your Address</label>
+                        <input type="text" placeholder="Street, City, Zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="btn-wrapper" style="gap: 1rem;">
+                        <button type="button" class="btn prev-btn btn-outline"
+                            style="background: var(--dark-surface);">Back</button>
+                        <button type="button" class="btn next-btn">Next Step</button>
+                    </div>
+                </div>
+                <!-- Step 4: Confirm -->
+                <div class="form-step">
+                    <h3>Step 4: Confirm Booking</h3>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="btn-wrapper" style="gap: 1rem;">
+                        <button type="button" class="btn prev-btn btn-outline"
+                            style="background: var(--dark-surface);">Back</button>
+                        <button type="submit" class="btn">Confirm Booking</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section 2: What to Expect -->
+    <section class="expectations" style="background-color: var(--white);">
+        <div class="section-title">
+            <h2>What to Expect</h2>
+            <p>Transparency from booking to completion.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <img src="assets/images/Arrival Notification.png" alt="Arrival Notification" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Arrival Notification</h3>
+                    <p class="card-text">You'll receive a text with your technician's photo and ETA when they are on
+                        their way.</p>
+                    <div class="btn-wrapper"><a href="contact.html" class="btn">Support</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/On-Site Service.png" alt="On-Site Service" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">On-Site Service</h3>
+                    <p class="card-text">The repair happens right where you are. All we need is a bit of space around
+                        the vehicle.</p>
+                    <div class="btn-wrapper"><a href="services.html" class="btn">View Process</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Repaired.png" alt="Repaired" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Quality Inspection</h3>
+                    <p class="card-text">Our technicians perform a multi-point safety check to ensure the perfect bond
+                        and clarity.</p>
+                    <div class="btn-wrapper"><a href="about.html" class="btn">Our Standards</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Service Area Map Embed Placeholder -->
+    <section class="service-area">
+        <div class="section-title">
+            <h2>Our Service Area</h2>
+            <p>Providing mobile glass repair across the entire metropolitan area.</p>
+        </div>
+        <div class="map-container"
+            style="max-width: 1000px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27!2d-74.2598!3d40.6976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1"
+                width="100%" height="450" style="border:0;" allowfullscreen loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Section 4: Booking benefits -->
+    <section class="benefits" style="background: var(--dark-bg); color: var(--white);">
+        <div class="section-title">
+            <h2 style="color: var(--white);">Why Book With Us?</h2>
+            <p style="color: var(--text-muted);">The Mobile Windshield Repair advantage.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card" style="background: var(--dark-surface);">
+                <img src="assets/images/Lifetime Warranty.png" alt="Warranty" class="card-img">
+                <div class="card-body">
+                    <h4 class="card-title">Lifetime Warranty</h4>
+                    <p>Guaranteed against leaks and defects for as long as you own your vehicle.</p>
+                </div>
+            </div>
+            <div class="card" style="background: var(--dark-surface);">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80"
+                    alt="Same Day" class="card-img">
+                <div class="card-body">
+                    <h4 class="card-title">Same Day Service</h4>
+                    <p>Book before noon and we'll often have a technician out to you the same day.</p>
+                </div>
+            </div>
+            <div class="card" style="background: var(--dark-surface);">
+                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80"
+                    alt="Certified" class="card-img">
+                <div class="card-body">
+                    <h4 class="card-title">Certified Glass</h4>
+                    <p>We only use glass that meets or exceeds OEM safety standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <a href="index.html" class="nav-brand">
+                        <img src="assets/images/logo/logo.svg" alt="Logo" width="32" height="32">
+                        <span>Mobile Windshield Repair</span>
+                    </a>
+                </div>
+                <p>Providing premium mobile auto glass services with a focus on quality, safety, and customer
+                    convenience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="booking.html">Book Repair</a></li>
+                    <li><a href="blog.html">Blog & Tips</a></li>
+                    <li><a href="rtl.html">RTL Version</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Chip Repair</a></li>
+                    <li><a href="services.html">Crack Repair</a></li>
+                    <li><a href="services.html">Full Replacement</a></li>
+                    <li><a href="services.html">ADAS Recalibration</a></li>
+                    <li><a href="insurance.html">Insurance Claims</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 1-800-GLASS-FIX</li>
+                    <li><i class="fas fa-envelope"></i> info@windshieldrepair.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Glass St, Auto City</li>
+                    <li><i class="fas fa-clock"></i> Mon - Sat: 8am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">&copy; 2026 Mobile Windshield Repair. All rights reserved.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+
+</html>

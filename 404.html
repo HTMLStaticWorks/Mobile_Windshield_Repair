@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Mobile Windshield Repair</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-bg), var(--primary-dark));
+            color: var(--white);
+            padding: 2rem;
+        }
+        .error-container {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .crack-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .error-nav {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/images/logo/logo.svg" alt="Mobile Windshield Repair Logo" width="32" height="32">
+            <span>Mobile Windshield Repair</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#" id="rtl-toggle" class="rtl-btn">RTL</a>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="error-page">
+        <div class="error-container">
+            <div class="crack-icon">
+                <i class="fas fa-house-crack"></i>
+            </div>
+            <div class="error-code">404</div>
+            <h2>Oops! This Page is Cracked.</h2>
+            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            
+            <div class="btn-wrapper" style="margin-top: 2rem;">
+                <a href="index.html" class="btn">Back to Home</a>
+            </div>
+
+            <div class="error-nav">
+                <a href="home2.html" style="color: var(--accent); font-weight: 600;">Home 2</a>
+                <a href="services.html" style="color: var(--accent); font-weight: 600;">Services</a>
+                <a href="booking.html" style="color: var(--accent); font-weight: 600;">Book a Repair</a>
+                <a href="contact.html" style="color: var(--accent); font-weight: 600;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

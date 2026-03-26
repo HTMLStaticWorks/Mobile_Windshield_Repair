@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <!-- Windshield Shape -->
+    <path fill="currentColor" d="M464 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zm-16 224H64V192h384v160z"/>
+    <!-- Repair Sparkle -->
+    <path fill="#FF6B2C" d="M256 160l15 80 80 15-80 15-15 80-15-80-80-15 80-15z"/>
+</svg>

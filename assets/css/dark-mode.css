@@ -1,0 +1,40 @@
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.dark-mode :root {
+  --card-bg: var(--dark-surface);
+  --text-dark: var(--text-light);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .card {
+  background: var(--dark-surface);
+  border: 1px solid var(--border);
+}
+
+.dark-mode .card-text {
+  color: var(--text-muted);
+}
+
+.dark-mode section {
+  background: var(--dark-bg);
+}
+
+.dark-mode section:nth-child(even) {
+  background: var(--dark-surface);
+}
+
+.dark-mode p {
+  color: var(--text-muted);
+}
+
+.dark-mode .nav-links a {
+  color: var(--text-light);
+}
+
+.dark-mode .navbar.scrolled {
+  background: rgba(10, 15, 30, 0.95);
+  backdrop-filter: blur(10px);
+}

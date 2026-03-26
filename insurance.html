@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claims | Mobile Windshield Repair</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/images/logo/logo.svg" alt="Mobile Windshield Repair Logo" width="32" height="32">
+            <span>Mobile Windshield Repair</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insurance.html" class="active">Insurance</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#" id="rtl-toggle" class="rtl-btn">RTL</a>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Hassle-Free Insurance Claims</h1>
+            <p>We work with all major insurance providers. In most cases, repairs are 100% covered with $0 deductible.</p>
+            <div class="btn-wrapper"><a href="#claim-form" class="btn">File a Claim</a></div>
+        </div>
+    </header>
+
+    <!-- Section 1: How it works -->
+    <section class="insurance-process">
+        <div class="section-title">
+            <h2>Our Seamless Claims Process</h2>
+            <p>Three easy steps to get your glass fixed through insurance.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Policy" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">1. Provide Policy</h3>
+                    <p class="card-text">Give us your insurance policy details during booking or through the claim form.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/We Verify.png" alt="Verification" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">2. We Verify</h3>
+                    <p class="card-text">Our team contacts your insurer to verify coverage and handle the paperwork for you.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Instant Approval.png" alt="Approval" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">3. Instant Approval</h3>
+                    <p class="card-text">Once verified, we proceed with the repair. Most insurers approve glass claims instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Supported insurers -->
+    <section class="insurers" style="background-color: var(--white);">
+        <div class="section-title">
+            <h2>Supported Insurance Providers</h2>
+            <p>We work with 100+ insurance companies nationwide.</p>
+        </div>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+            <div class="card" style="padding: 2rem; align-items: center;"><i class="fas fa-shield-halved" style="font-size: 3rem; color: var(--primary);"></i><p style="margin-top: 1rem;">State Farm</p></div>
+            <div class="card" style="padding: 2rem; align-items: center;"><i class="fas fa-shield-heart" style="font-size: 3rem; color: var(--accent);"></i><p style="margin-top: 1rem;">GEICO</p></div>
+            <div class="card" style="padding: 2rem; align-items: center;"><i class="fas fa-building-shield" style="font-size: 3rem; color: var(--primary-dark);"></i><p style="margin-top: 1rem;">Allstate</p></div>
+            <div class="card" style="padding: 2rem; align-items: center;"><i class="fas fa-user-shield" style="font-size: 3rem; color: var(--accent);"></i><p style="margin-top: 1rem;">Progressive</p></div>
+            <div class="card" style="padding: 2rem; align-items: center;"><i class="fas fa-landmark" style="font-size: 3rem; color: var(--primary);"></i><p style="margin-top: 1rem;">Farmers</p></div>
+            <div class="card" style="padding: 2rem; align-items: center;"><i class="fas fa-house-shield" style="font-size: 3rem; color: var(--primary-dark);"></i><p style="margin-top: 1rem;">Liberty Mutual</p></div>
+        </div>
+    </section>
+
+    <!-- Section 3: Claim form -->
+    <section class="claim-form" id="claim-form">
+        <div class="section-title">
+            <h2>File a New Claim</h2>
+            <p>Quickly submit your insurance information for a new repair.</p>
+        </div>
+        <div class="card" style="max-width: 800px; margin: 0 auto; padding: 2.5rem; text-align: left;">
+            <form action="#">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Policy Number</label>
+                        <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Claim Type</label>
+                        <select style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;" required>
+                            <option value="">Select Type</option>
+                            <option value="chip">Windshield Chip</option>
+                            <option value="crack">Windshield Crack</option>
+                            <option value="replace">Full Replacement</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Damage Description</label>
+                    <textarea style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; height: 100px;" placeholder="Briefly describe the damage location and size..." required></textarea>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Upload Damage Photo</label>
+                    <input type="file" style="width: 100%; padding: 0.5rem; border: 1px dashed var(--border); border-radius: 8px;">
+                </div>
+                <div class="btn-wrapper">
+                    <button type="submit" class="btn">Submit Claim</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section 4: Insurance FAQ -->
+    <section class="faq-premium-section alt-bg">
+        <div class="faq-premium-container">
+            <span class="faq-premium-badge">Got Questions?</span>
+            <h2 class="faq-premium-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-premium-item active">
+                <div class="faq-premium-header">
+                    <div class="faq-q-icon"><i class="fas fa-question"></i></div>
+                    <h4>Do you accept insurance?</h4>
+                    <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-premium-content">
+                    <p>Yes, we accept all major insurance providers. In fact, we are a preferred vendor for most insurers, meaning we can often repair your windshield with $0 out-of-pocket cost to you.</p>
+                </div>
+            </div>
+
+            <div class="faq-premium-item">
+                <div class="faq-premium-header">
+                    <div class="faq-q-icon"><i class="fas fa-question"></i></div>
+                    <h4>What documents do I need to submit a claim?</h4>
+                    <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-premium-content">
+                    <p>All we need is your insurance provider name and policy number. Our team will handle the rest, including contacting your agent and filing the glass claim paperwork.</p>
+                </div>
+            </div>
+
+            <div class="faq-premium-item">
+                <div class="faq-premium-header">
+                    <div class="faq-q-icon"><i class="fas fa-question"></i></div>
+                    <h4>How long does the insurance claim process take?</h4>
+                    <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-premium-content">
+                    <p>Verification is usually instant during business hours. We can often confirm coverage and schedule your appointment within minutes of receiving your policy details.</p>
+                </div>
+            </div>
+
+            <div class="faq-premium-item">
+                <div class="faq-premium-header">
+                    <div class="faq-q-icon"><i class="fas fa-question"></i></div>
+                    <h4>Is my vehicle/property covered during the service?</h4>
+                    <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-premium-content">
+                    <p>Absolutely. We are fully licensed, bonded, and insured. Your vehicle is covered by our professional liability insurance from the moment we start working until we finish.</p>
+                </div>
+            </div>
+
+            <div class="faq-premium-item">
+                <div class="faq-premium-header">
+                    <div class="faq-q-icon"><i class="fas fa-question"></i></div>
+                    <h4>Who do I contact for insurance-related queries?</h4>
+                    <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-premium-content">
+                    <p>You can call our dedicated insurance support desk at 1-800-GLASS-IMS or use the live chat on your customer dashboard for real-time claim status updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <a href="index.html" class="nav-brand">
+                        <img src="assets/images/logo/logo.svg" alt="Logo" width="32" height="32">
+                        <span>Mobile Windshield Repair</span>
+                    </a>
+                </div>
+                <p>Providing premium mobile auto glass services with a focus on quality, safety, and customer convenience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <!-- Links Columns Repeated -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="booking.html">Book Repair</a></li>
+                    <li><a href="blog.html">Blog & Tips</a></li>
+                    <li><a href="rtl.html">RTL Version</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Chip Repair</a></li>
+                    <li><a href="services.html">Crack Repair</a></li>
+                    <li><a href="services.html">Full Replacement</a></li>
+                    <li><a href="services.html">ADAS Recalibration</a></li>
+                    <li><a href="insurance.html">Insurance Claims</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 1-800-GLASS-FIX</li>
+                    <li><i class="fas fa-envelope"></i> info@windshieldrepair.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Glass St, Auto City</li>
+                    <li><i class="fas fa-clock"></i> Mon - Sat: 8am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">&copy; 2026 Mobile Windshield Repair. All rights reserved.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validation.js"></script>
+</body>
+</html>

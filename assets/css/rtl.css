@@ -1,0 +1,93 @@
+/* Global RTL adjustments */
+[dir="rtl"] {
+    direction: rtl;
+}
+
+[dir="rtl"] body {
+    text-align: right;
+    font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* Navbar Mirroring */
+[dir="rtl"] .navbar {
+    flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .nav-brand {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-links {
+    flex-direction: column; /* Mobile Drawer */
+    text-align: right;
+    margin-left: 0 !important;
+}
+
+@media (min-width: 1025px) {
+    [dir="rtl"] .nav-links {
+        flex-direction: row-reverse !important;
+        margin-right: 3.5rem !important;
+        margin-left: 0 !important;
+    }
+}
+
+[dir="rtl"] .nav-actions {
+    flex-direction: row-reverse;
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+/* Component Mirroring */
+[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+[dir="rtl"] .card {
+    text-align: right;
+}
+
+[dir="rtl"] .card-img {
+    order: 2; /* If grid/flex */
+}
+
+[dir="rtl"] .btn-wrapper {
+    justify-content: flex-start;
+}
+
+[dir="rtl"] .faq-premium-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .faq-premium-content {
+    padding-right: 4.5rem;
+    padding-left: 1.5rem;
+}
+
+[dir="rtl"] .footer-grid {
+    text-align: right;
+}
+
+[dir="rtl"] .footer-column {
+    text-align: right;
+}
+
+[dir="rtl"] .social-links {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+[dir="rtl"] .ml-auto {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="rtl"] .mr-2 {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .fa-chevron-right::before { content: "\f053"; }
+[dir="rtl"] .fa-chevron-left::before { content: "\f054"; }
+[dir="rtl"] .fa-arrow-right::before { content: "\f060"; }
