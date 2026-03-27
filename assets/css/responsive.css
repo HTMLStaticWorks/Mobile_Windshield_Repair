@@ -1,5 +1,6 @@
 /* Global Overflow Safety */
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
@@ -15,16 +16,17 @@ html, body {
     height: 100vh;
     background: var(--dark-surface);
     flex-direction: column;
-    padding: 6rem 2rem 2rem;
+    justify-content: center;
+    padding: 2rem;
     z-index: 1000;
     transition: 0.4s ease-in-out;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
   }
 
   [dir="rtl"] .nav-links {
     right: auto;
     left: -100%;
-    box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
   }
 
   .nav-links.active {
@@ -60,7 +62,7 @@ html, body {
     height: 26px;
   }
 
-  .nav-actions {
+  .right-controls {
     gap: 0.75rem;
   }
 
@@ -73,13 +75,68 @@ html, body {
     text-align: center;
   }
 
+  .footer-logo .nav-brand {
+    justify-content: center;
+  }
+
   .social-links {
     justify-content: center;
   }
 
-  .hero h1 { font-size: 2.2rem; }
-  .section-title h2 { font-size: 1.8rem; }
-  .card-grid { grid-template-columns: 1fr; }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Featured Post Mobile */
+  .featured-card {
+    flex-direction: column !important;
+  }
+
+  .featured-img,
+  .featured-body {
+    width: 100% !important;
+  }
+
+  .featured-img {
+    min-height: 250px !important;
+    height: 250px !important;
+  }
+
+  .horizontal-card .card-body {
+    width: 100% !important;
+    padding: 2rem !important;
+    text-align: left !important;
+  }
+
+  .horizontal-card .btn-wrapper {
+    justify-content: flex-start !important;
+  }
+
+  /* Newsletter Mobile Fix */
+  .newsletter .card {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  .newsletter form {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  .newsletter form input {
+    width: 100% !important;
+  }
+
+  .newsletter form .btn {
+    width: 100% !important;
+  }
 }
 
 /* 2. Tablet (577px – 1024px) */
@@ -92,7 +149,8 @@ html, body {
     height: 100vh;
     background: var(--dark-surface);
     flex-direction: column;
-    padding: 6rem 2rem 2rem;
+    justify-content: center;
+    padding: 2rem;
     z-index: 1000;
     transition: 0.4s ease-in-out;
   }
@@ -115,12 +173,174 @@ html, body {
     display: block !important;
   }
 
-  .card-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero h1 { font-size: 3rem; }
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .overview .card:nth-child(3),
+  .testimonials .card:nth-child(3),
+  .pricing .card:nth-child(3),
+  .services-overview .card:nth-child(3),
+  .service-process .card:nth-child(3),
+  .expectations .card:nth-child(3),
+  .insurance-process .card:nth-child(3),
+  .benefits .card:nth-child(3),
+  .latest-posts .card:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 1rem);
+    /* Matches the width of other cards in the 2-column grid */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-column:nth-child(4) {
+    grid-column: span 3;
+    text-align: center;
+  }
+
+  .footer-column:nth-child(4) .footer-links {
+    display: inline-block;
+    text-align: left;
+  }
+
+  /* Featured Post Tablet */
+  .featured-body {
+    padding: 2rem !important;
+  }
+
+  .featured-img {
+    min-height: 350px !important;
+  }
 }
 
 /* 3. Desktop (Above 1024px) */
 @media (min-width: 1025px) {
-  .mobile-toggle { display: none !important; }
-  .mobile-nav-overlay { display: none !important; }
+  .mobile-toggle {
+    display: none !important;
+  }
+
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+}
+
+/* 4. Layout Fix: 4th Card Centering (3-column state) */
+@media (min-width: 821px) and (max-width: 1024px) {
+
+  .process .card-grid,
+  .stats .card-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .process .card:nth-child(4),
+  .stats .stat-item:nth-child(4) {
+    grid-column: 2;
+    /* Centers the 4th card in a 3-column grid */
+  }
+}
+
+/* 5. Mobile RTL Alignment Fix (max-width: 768px) */
+@media (max-width: 768px) {
+
+  .navbar,
+  .right-controls {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: fixed !important;
+    top: 70px !important;
+    width: 280px !important;
+    height: calc(100vh - 70px) !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 3rem 1.5rem !important;
+    gap: 20px !important;
+    margin-left: auto !important;
+    transition: 0.4s ease-in-out !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .nav-links li {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .nav-links a {
+    display: inline-block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .nav-links>* {
+    flex-shrink: 0 !important;
+  }
+
+  [dir="rtl"] .nav-links {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden !important;
+  }
+
+  .right-controls {
+    gap: 12px !important;
+  }
+
+  [dir="rtl"] .right-controls {
+    flex-direction: row !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body[dir="rtl"] * {
+    box-sizing: border-box !important;
+  }
+
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+
+  .mobile-stack .stack-img {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  .mobile-stack .stack-body {
+    width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  .mobile-stack .btn-wrapper {
+    justify-content: center !important;
+  }
+
+  /* FAQ Mobile Alignment Fix */
+  .faq-premium-header {
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+
+  .faq-premium-header h4 {
+    font-size: 1.1rem !important;
+  }
+
+  .faq-toggle-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
 }

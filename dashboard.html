@@ -320,10 +320,19 @@
         .table-responsive { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
         th { background: rgba(0,0,0,0.02); padding: 1.25rem 2rem; text-align: left; font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 800; letter-spacing: 1px; }
-        td { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; font-weight: 500; }
+        td { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; font-weight: 500; vertical-align: middle; }
         body.dark-mode th { background: rgba(255,255,255,0.03); color: white; }
 
-        .badge { padding: 0.4rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+        .badge { 
+            padding: 0.4rem 1rem; 
+            border-radius: 30px; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            display: inline-block;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
         .badge-success { background: #dcfce7; color: #15803d; }
         .badge-warning { background: #fef9c3; color: #a16207; }
 
@@ -350,7 +359,30 @@
             background: var(--dashboard-bg); color: var(--text-main); font-family: 'Inter', sans-serif;
             transition: all 0.3s;
         }
-        .form-group input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(29, 158, 117, 0.1); }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .form-actions {
+                flex-direction: column;
+            }
+            .form-actions .btn {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -362,10 +394,10 @@
         <button class="hamburger" id="hamburger-btn">
             <i class="fas fa-bars"></i>
         </button>
-        <div class="sidebar-brand" style="border: none; padding: 0;">
+        <a href="index.html" class="sidebar-brand" style="border: none; padding: 0; text-decoration: none; color: inherit; display: flex; align-items: center;">
             <img src="assets/images/logo/logo.svg" alt="Logo" width="30" height="30">
             <span style="font-size: 1.1rem;">Mobile Windshield Repair</span>
-        </div>
+        </a>
         <div style="width: 40px;"></div> <!-- Spacer -->
     </header>
 
@@ -373,10 +405,10 @@
     <aside class="dashboard-sidebar" id="sidebar">
         
         <div class="sidebar-content-top">
-            <div class="sidebar-brand">
+            <a href="index.html" class="sidebar-brand" style="text-decoration: none; color: inherit;">
                 <img src="assets/images/logo/logo.svg" alt="Logo" width="40" height="40">
-                <span>Mobile Windshield Repair</span>
-            </div>
+                <span>Windshield</span>
+            </a>
 
             <hr class="sidebar-divider">
 
@@ -399,17 +431,6 @@
         </div>
 
         <div class="sidebar-content-bottom">
-            <div class="appearance-section">
-                <div class="menu-label">Appearance</div>
-                <div class="appearance-controls">
-                    <button class="appearance-btn theme-toggle">
-                        <i class="fas fa-moon"></i> Dark
-                    </button>
-                    <button class="appearance-btn" id="rtl-toggle">
-                        <i class="fas fa-language"></i> RTL
-                    </button>
-                </div>
-            </div>
 
             <button class="logout-btn" onclick="window.location.href='index.html'">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -579,7 +600,7 @@
             </div>
             <div class="form-card">
                 <form onsubmit="return false;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-row">
                         <div class="form-group">
                             <label>Full Name</label>
                             <input type="text" value="Jane Doe">
@@ -597,7 +618,7 @@
                         <label>Default Car Model</label>
                         <input type="text" value="Tesla Model 3 (2023)">
                     </div>
-                    <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem;">
+                    <div class="form-actions">
                         <button type="button" class="btn" style="background: var(--dark-surface); color: white;">Cancel</button>
                         <button type="submit" class="btn">Save Profile</button>
                     </div>

@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       navLinks.classList.toggle('active');
       overlay.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
       const icon = mobileToggle.querySelector('i');
       if (icon) {
         icon.classList.toggle('fa-bars');
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.addEventListener('click', () => {
     navLinks.classList.remove('active');
     overlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
     if (mobileToggle) {
       const icon = mobileToggle.querySelector('i');
       if (icon) {
@@ -72,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
       overlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
       if (mobileToggle) {
         const icon = mobileToggle.querySelector('i');
         if (icon) {

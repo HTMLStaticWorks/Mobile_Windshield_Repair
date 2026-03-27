@@ -37,7 +37,7 @@
     margin-right: 3.5rem !important;
 }
 
-[dir="rtl"] .nav-actions {
+[dir="rtl"] .right-controls {
     margin-left: 0 !important;
     margin-right: auto !important;
 }

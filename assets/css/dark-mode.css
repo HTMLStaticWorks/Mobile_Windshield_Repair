@@ -1,40 +1,167 @@
+/* Global Dark Mode Variables Override */
+body.dark-mode {
+  --dark-bg: #121212;
+  --dark-surface: #1E1E1E;
+  --navbar-footer-bg: #181818;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-muted: #AAAAAA;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --accent-bright: #FF8A5B; /* Brighter accent for dark mode */
+}
+
+/* Base Body Styles */
 body.dark-mode {
   background-color: var(--dark-bg);
-  color: var(--text-light);
+  color: var(--text-primary);
 }
 
-.dark-mode :root {
-  --card-bg: var(--dark-surface);
-  --text-dark: var(--text-light);
-  --border: rgba(255, 255, 255, 0.1);
+/* Global Typography */
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode h4, 
+.dark-mode h5, 
+.dark-mode h6 {
+  color: var(--text-primary) !important;
 }
 
-.dark-mode .card {
-  background: var(--dark-surface);
-  border: 1px solid var(--border);
+.dark-mode p,
+.dark-mode span,
+.dark-mode li {
+  color: var(--text-secondary);
 }
 
-.dark-mode .card-text {
-  color: var(--text-muted);
+.dark-mode .text-muted,
+.dark-mode .copyright-bar {
+  color: var(--text-muted) !important;
 }
 
-.dark-mode section {
-  background: var(--dark-bg);
-}
-
-.dark-mode section:nth-child(even) {
-  background: var(--dark-surface);
-}
-
-.dark-mode p {
-  color: var(--text-muted);
+/* Navbar & Footer */
+.dark-mode .navbar,
+.dark-mode .navbar.scrolled,
+.dark-mode footer {
+  background-color: var(--navbar-footer-bg) !important;
 }
 
 .dark-mode .nav-links a {
-  color: var(--text-light);
+  color: var(--text-primary);
 }
 
-.dark-mode .navbar.scrolled {
-  background: rgba(10, 15, 30, 0.95);
-  backdrop-filter: blur(10px);
+.dark-mode .nav-links a:hover,
+.dark-mode .nav-links a.active {
+  color: var(--accent-bright);
+}
+
+/* Hero Section */
+.dark-mode .hero-overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.dark-mode .hero p {
+  color: var(--text-secondary);
+}
+
+/* Cards & Sections */
+.dark-mode section {
+  background-color: var(--dark-bg);
+}
+
+.dark-mode section:nth-child(even),
+.dark-mode .faq-premium-section,
+.dark-mode .expectations,
+.dark-mode .faq-premium-section.alt-bg {
+  background-color: var(--dark-surface) !important;
+}
+
+.dark-mode .card,
+.dark-mode .dashboard-sidebar,
+.dark-mode .faq-premium-item {
+  background-color: var(--dark-surface) !important;
+  border-color: var(--border-subtle) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .card-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Form Elements */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: var(--dark-surface) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1;
+}
+
+.dark-mode label {
+  color: var(--text-primary) !important;
+}
+
+/* Buttons & Links */
+.dark-mode .btn:not(.btn-outline) {
+  background-color: var(--accent-bright);
+  color: #000000; /* High contrast black text for bright buttons */
+}
+
+.dark-mode .btn:not(.btn-outline):hover {
+  background-color: var(--white);
+  color: var(--dark-bg);
+}
+
+.dark-mode .btn-outline {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.dark-mode .btn-outline:hover {
+  background-color: var(--text-primary);
+  color: var(--dark-bg);
+}
+
+.dark-mode .nav-btn.login-btn {
+  border-color: var(--accent-bright);
+  color: var(--accent-bright) !important;
+}
+
+.dark-mode .nav-btn.login-btn:hover {
+  background-color: var(--accent-bright);
+  color: #000000 !important;
+}
+
+/* FAQ Component Specifics */
+.dark-mode .faq-premium-header h4 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .faq-premium-content {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .faq-toggle-icon {
+  background-color: var(--dark-bg);
+  color: var(--accent-bright);
+}
+
+.dark-mode .faq-premium-item.active .faq-toggle-icon {
+  background-color: var(--accent-bright);
+  color: #000000;
+}
+
+/* RTL Toggle specifically for dark mode */
+.dark-mode .rtl-btn {
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+}
+
+.dark-mode .rtl-btn:hover {
+  background-color: var(--accent-bright);
+  color: #000000;
 }
