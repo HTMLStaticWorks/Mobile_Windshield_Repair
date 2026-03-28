@@ -97,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
       }
+      const textSpan = toggle.querySelector('span');
+      if (textSpan) textSpan.textContent = 'Light Mode';
     });
     localStorage.setItem('theme', 'dark');
   };
@@ -109,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
       }
+      const textSpan = toggle.querySelector('span');
+      if (textSpan) textSpan.textContent = 'Dark Mode';
     });
     localStorage.setItem('theme', 'light');
   };
@@ -143,12 +147,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // RTL Toggle Logic
   const rtlToggles = document.querySelectorAll('#rtl-toggle');
-  
+
   const enableRTL = () => {
     document.documentElement.setAttribute('dir', 'rtl');
     document.body.classList.add('rtl-active');
     rtlToggles.forEach(toggle => {
-      toggle.textContent = 'LTR';
+      const textSpan = toggle.querySelector('span');
+      if (textSpan) {
+        textSpan.textContent = 'LTR';
+      } else {
+        toggle.textContent = 'LTR';
+      }
     });
     localStorage.setItem('rtl', 'true');
   };
@@ -157,7 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('dir', 'ltr');
     document.body.classList.remove('rtl-active');
     rtlToggles.forEach(toggle => {
-      toggle.textContent = 'RTL';
+      const textSpan = toggle.querySelector('span');
+      if (textSpan) {
+        textSpan.textContent = 'RTL';
+      } else {
+        toggle.textContent = 'RTL';
+      }
     });
     localStorage.setItem('rtl', 'false');
   };

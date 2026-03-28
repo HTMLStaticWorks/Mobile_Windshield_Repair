@@ -191,6 +191,19 @@ body.dark-mode {
   color: var(--accent-bright) !important;
 }
 
+/* Social Login & Logo Overrides for Dark Mode */
+.dark-mode .auth-logo span {
+  color: #FFFFFF !important;
+}
+
+.dark-mode .social-btn span {
+  color: #000000 !important;
+}
+
+.dark-mode .social-btn:hover span {
+  color: #000000 !important;
+}
+
 /* RTL Toggle specifically for dark mode */
 .dark-mode .rtl-btn {
   color: var(--accent-bright);

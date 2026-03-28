@@ -18,13 +18,13 @@ body {
     background: var(--dark-surface);
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    /* Center horizontally */
     padding: 3rem 2rem;
     z-index: 1000;
     transition: 0.4s ease-in-out;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
   }
-
-
 
   .nav-links.active {
     right: 0;
@@ -34,6 +34,8 @@ body {
 
   .nav-links li {
     width: 100%;
+    text-align: center;
+    /* Center horizontally */
   }
 
   .nav-links a {
@@ -41,6 +43,29 @@ body {
     display: block;
     padding: 0.8rem 0;
     color: var(--white);
+    position: relative;
+    transition: 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: 0.3s ease;
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent) !important;
   }
 
   .mobile-toggle {
@@ -99,6 +124,15 @@ body {
     width: 100% !important;
   }
 
+  .featured-body {
+    text-align: center !important;
+    padding: 2.5rem !important;
+  }
+
+  .featured-btn-wrapper {
+    justify-content: center !important;
+  }
+
   .featured-img {
     min-height: 250px !important;
     height: 250px !important;
@@ -143,23 +177,93 @@ body {
     height: 300px !important;
     margin: 0 auto !important;
   }
+
+  /* Mobile Stack Cards */
+  .mobile-stack {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .mobile-stack .stack-img,
+  .mobile-stack .stack-body {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .mobile-stack .stack-img {
+    height: 250px !important;
+  }
+
+  .mobile-stack .stack-body {
+    padding: 2rem 1.5rem !important;
+    text-align: center !important;
+  }
+
+  .mobile-stack .btn-wrapper {
+    justify-content: center !important;
+  }
 }
 
-/* 2. Tablet (577px – 1024px) */
-@media (min-width: 577px) and (max-width: 1024px) {
+/* 2. Tablet (768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 320px;
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
     height: 100vh;
     overflow-y: auto;
     background: var(--dark-surface);
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: flex-start !important;
+    /* Aligns menu items to top */
+    align-items: center !important;
+    /* Centers items horizontally */
+    padding: 5rem 2rem !important;
+    /* Generous top padding for a premium look */
     z-index: 1000;
     transition: 0.4s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    /* Smooth vertical spacing */
+  }
+
+  .nav-links a {
+    font-size: 1.5rem !important;
+    display: block;
+    padding: 1rem 0 !important;
+    /* Better click area */
+    color: var(--white);
+    position: relative;
+    transition: 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: 0.3s ease;
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent) !important;
   }
 
   [dir="rtl"] .nav-links {
@@ -218,12 +322,28 @@ body {
   }
 
   /* Featured Post Tablet */
+  .featured-card {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .featured-img,
   .featured-body {
-    padding: 2rem !important;
+    width: 100% !important;
   }
 
   .featured-img {
-    min-height: 350px !important;
+    min-height: 300px !important;
+    height: 300px !important;
+  }
+
+  .featured-body {
+    padding: 2.5rem !important;
+    text-align: center !important;
+  }
+
+  .featured-btn-wrapper {
+    justify-content: center !important;
   }
 }
 

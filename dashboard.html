@@ -194,6 +194,12 @@
             font-weight: 700;
         }
 
+        /* Remove animations for RTL and Theme toggle on dashboard */
+        .sidebar-menu #rtl-toggle:hover,
+        .sidebar-menu .theme-toggle:hover {
+            transform: none !important;
+        }
+
         /* Bottom Section */
         .sidebar-content-bottom {
             display: flex;
@@ -300,28 +306,202 @@
             }
 
             .dashboard-sidebar.active {
-                transform: translateX(0);
+                transform: translateX(0) !important;
             }
 
             .main-content {
                 margin-left: 0;
                 padding: 6rem 1.5rem 2rem;
             }
+
+            [dir="rtl"] .main-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
 
-            .dashboard-header-mobile {
-                display: flex;
+        /* Desktop RTL Mirroring */
+        @media (min-width: 1025px) {
+            [dir="rtl"] .dashboard-sidebar {
+                left: auto;
+                right: 0;
+                box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
             }
 
-            /* Center the third card on tablet viewports where it orphans */
-            @media (min-width: 768px) {
-                .stat-card:nth-child(3) {
-                    grid-column: span 2;
-                    justify-self: center;
-                    width: 100%;
-                    max-width: 450px;
+            [dir="rtl"] .main-content {
+                margin-left: 0;
+                margin-right: var(--sidebar-width);
+            }
+        }
+
+        /* General RTL Alignment Overrides */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .table-header,
+        [dir="rtl"] th,
+        [dir="rtl"] td {
+            text-align: right;
+        }
+
+        [dir="rtl"] .form-actions {
+            justify-content: flex-start;
+        }
+
+        [dir="rtl"] .sidebar-menu a i {
+            margin-left: 0;
+        }
+
+        [dir="rtl"] .logout-btn i {
+            transform: scaleX(-1);
+        }
+
+        [dir="rtl"] .section-header h2 {
+            text-align: right;
+        }
+
+        @media (max-width: 1024px) {
+            [dir="rtl"] .dashboard-header-mobile {
+                left: auto;
+                right: 15px;
+            }
+        }
+
+        /* Mobile header: Floating hamburger only for mobile and tablet, hidden on laptop */
+        @media (max-width: 1024px) {
+            .dashboard-header-mobile {
+                display: flex !important;
+                position: fixed;
+                top: 15px;
+                left: 15px;
+                width: auto;
+                height: auto;
+                padding: 0;
+                background: transparent !important;
+                box-shadow: none !important;
+                z-index: 1050;
+            }
+
+            .dashboard-header-mobile .sidebar-brand,
+            .dashboard-header-mobile .rtl-btn,
+            .dashboard-header-mobile .theme-toggle,
+            .dashboard-header-mobile #rtl-toggle,
+            .dashboard-header-mobile .right-controls {
+                display: none !important;
+            }
+
+            .dashboard-header-mobile .hamburger {
+                background: var(--sidebar-bg) !important;
+                color: white !important;
+                width: 45px;
+                height: 45px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                margin: 0 !important;
+            }
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                .dashboard-sidebar {
+                    width: 300px !important;
+                    min-width: 300px !important;
+                    max-width: 300px !important;
+                    align-items: center !important;
+                    text-align: center !important;
+                    padding-top: 5rem !important;
+                }
+
+                .sidebar-menu {
+                    gap: 1.5rem !important;
+                    /* Increased spacing between tabs */
+                }
+
+                .sidebar-menu a {
+                    font-size: 1.4rem !important;
+                    padding: 15px 25px !important;
+                    justify-content: center !important;
+                }
+
+                .sidebar-brand span {
+                    font-size: 1.6rem !important;
                 }
             }
+
+            .sidebar-brand {
+                justify-content: center !important;
+                width: 100%;
+            }
+
+            .sidebar-profile {
+                flex-direction: column !important;
+                text-align: center !important;
+                width: 100%;
+            }
+
+            .sidebar-menu {
+                width: 100%;
+                padding: 0;
+            }
+
+            .sidebar-menu a {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+                gap: 15px !important;
+                width: 220px !important;
+                margin: 0 auto !important;
+                padding: 12px 0 !important;
+                font-size: 1.2rem !important;
+                border-radius: 12px !important;
+            }
+
+            .sidebar-menu a i {
+                width: 30px !important;
+                text-align: center !important;
+                font-size: 1.3rem !important;
+                margin: 0 !important;
+            }
+
+            .logout-btn {
+                width: 220px !important;
+                margin: 0 auto !important;
+                padding: 12px !important;
+                display: flex !important;
+                justify-content: center !important;
+                gap: 10px !important;
+            }
+
+            .profile-info h4 {
+                font-size: 1.2rem !important;
+            }
+
+            .sidebar-content-bottom {
+                padding: 0 15px !important;
+                margin-top: 3rem !important; /* Visual gap between menu and logout */
+                width: 100%;
+                padding-bottom: 2rem !important; /* Bottom spacing */
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .dashboard-header-mobile {
+                display: none !important;
+            }
+        }
+
+        /* Center the third card on tablet viewports where it orphans */
+        @media (min-width: 768px) {
+            .stat-card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+                width: 100%;
+                max-width: 450px;
+            }
+        }
         }
 
         /* Content UI Components */
@@ -587,6 +767,8 @@
                 <li><a onclick="switchTab('messages', this)"><i class="fas fa-comments"></i> Messages</a></li>
                 <li><a onclick="switchTab('billing', this)"><i class="fas fa-credit-card"></i> Billing</a></li>
                 <li><a onclick="switchTab('settings', this)"><i class="fas fa-user-cog"></i> Settings</a></li>
+                <li><a id="rtl-toggle"><i class="fas fa-language"></i> <span>RTL</span></a></li>
+                <li><a class="theme-toggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></a></li>
             </ul>
         </div>
 
