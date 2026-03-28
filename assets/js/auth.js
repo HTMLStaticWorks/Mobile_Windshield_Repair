@@ -107,4 +107,18 @@ document.addEventListener('DOMContentLoaded', () => {
     allInputs.forEach(input => {
         input.addEventListener('input', () => clearError(input));
     });
+
+    // Password visibility toggle
+    const togglePasswords = document.querySelectorAll('.toggle-password');
+    togglePasswords.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const input = this.parentElement.querySelector('input');
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            
+            // Toggle eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
 });

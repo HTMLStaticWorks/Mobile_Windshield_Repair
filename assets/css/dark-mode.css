@@ -8,6 +8,8 @@ body.dark-mode {
   --text-muted: #AAAAAA;
   --border-subtle: rgba(255, 255, 255, 0.1);
   --accent-bright: #FF8A5B; /* Brighter accent for dark mode */
+  --card-bg: #1E1E1E;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 /* Base Body Styles */

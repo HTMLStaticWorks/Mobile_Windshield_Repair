@@ -171,6 +171,13 @@ img {
   border-color: var(--primary-dark);
 }
 
+/* Remove underline for buttons in laptop view */
+@media (min-width: 1025px) {
+  .nav-links a.nav-btn::after {
+    display: none !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-btn {
     width: 100%;

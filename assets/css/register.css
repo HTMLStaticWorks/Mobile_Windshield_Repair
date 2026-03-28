@@ -78,8 +78,28 @@
     box-shadow: 0 0 0 4px rgba(27, 79, 255, 0.1);
 }
 
-.input-wrapper input:focus + i {
+.input-wrapper input:focus + i:not(.toggle-password) {
     color: var(--primary);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    left: auto !important;
+    cursor: pointer;
+    z-index: 10;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+/* Adjust input padding to accommodate the right icon */
+.input-wrapper input[type="password"],
+.input-wrapper input[type="text"] {
+    padding-right: 2.8rem;
 }
 
 .auth-btn {
