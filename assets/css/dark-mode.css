@@ -157,6 +157,40 @@ body.dark-mode {
   color: #000000;
 }
 
+/* Specific Overrides for Authentication Pages (Login & Register) */
+.dark-mode .auth-page {
+  background-color: var(--dark-bg) !important;
+}
+
+.dark-mode .auth-container {
+  background-color: var(--dark-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+.dark-mode .auth-header h2,
+.dark-mode .auth-header p,
+.dark-mode .form-group label,
+.dark-mode .auth-footer,
+.dark-mode .auth-footer p {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .input-wrapper i:not(.toggle-password) {
+  color: var(--text-muted) !important;
+}
+
+.dark-mode .input-wrapper input:focus + i:not(.toggle-password) {
+  color: var(--accent-bright) !important;
+}
+
+.dark-mode .forgot-link {
+  color: var(--accent-bright) !important;
+}
+
+.dark-mode .auth-footer a {
+  color: var(--accent-bright) !important;
+}
+
 /* RTL Toggle specifically for dark mode */
 .dark-mode .rtl-btn {
   color: var(--accent-bright);

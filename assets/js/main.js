@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
-  const themeToggle = document.querySelector('.theme-toggle');
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   // Sticky Navbar logic
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (navbar && window.scrollY > 50) {
       navbar.classList.add('scrolled');
-    } else {
+    } else if (navbar) {
       navbar.classList.remove('scrolled');
     }
   });
@@ -70,78 +69,96 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Close nav drawer on link click (Mobile)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      overlay.classList.remove('active');
-      document.body.classList.remove('menu-open');
-      if (mobileToggle) {
-        const icon = mobileToggle.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-xmark');
+  if (navLinks) {
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        if (mobileToggle) {
+          const icon = mobileToggle.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+          }
         }
-      }
+      });
     });
-  });
+  }
 
   // Dark Mode Logic
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+
   const enableDarkMode = () => {
     document.body.classList.add('dark-mode');
-    if (themeToggle) {
-      const icon = themeToggle.querySelector('i');
+    themeToggles.forEach(toggle => {
+      const icon = toggle.querySelector('i');
       if (icon) {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
       }
-    }
+    });
     localStorage.setItem('theme', 'dark');
   };
 
   const disableDarkMode = () => {
     document.body.classList.remove('dark-mode');
-    if (themeToggle) {
-      const icon = themeToggle.querySelector('i');
+    themeToggles.forEach(toggle => {
+      const icon = toggle.querySelector('i');
       if (icon) {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
       }
-    }
+    });
     localStorage.setItem('theme', 'light');
   };
 
-  if (localStorage.getItem('theme') === 'dark') {
+  // Default to dark mode if no theme is set
+  if (localStorage.getItem('theme') === 'dark' || !localStorage.getItem('theme')) {
     enableDarkMode();
+  } else if (localStorage.getItem('theme') === 'light') {
+    disableDarkMode();
   }
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
       if (document.body.classList.contains('dark-mode')) {
         disableDarkMode();
       } else {
         enableDarkMode();
       }
     });
-  }
+  });
 
-  // RTL Toggle Logic (Optimized)
-  const rtlToggle = document.querySelector('#rtl-toggle');
+  // Sync theme across tabs
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'theme') {
+      if (e.newValue === 'dark') {
+        enableDarkMode();
+      } else {
+        disableDarkMode();
+      }
+    }
+  });
+
+  // RTL Toggle Logic
+  const rtlToggles = document.querySelectorAll('#rtl-toggle');
   
   const enableRTL = () => {
     document.documentElement.setAttribute('dir', 'rtl');
     document.body.classList.add('rtl-active');
-    if (rtlToggle) {
-      rtlToggle.textContent = 'LTR';
-    }
+    rtlToggles.forEach(toggle => {
+      toggle.textContent = 'LTR';
+    });
     localStorage.setItem('rtl', 'true');
   };
 
   const disableRTL = () => {
     document.documentElement.setAttribute('dir', 'ltr');
     document.body.classList.remove('rtl-active');
-    if (rtlToggle) {
-      rtlToggle.textContent = 'RTL';
-    }
+    rtlToggles.forEach(toggle => {
+      toggle.textContent = 'RTL';
+    });
     localStorage.setItem('rtl', 'false');
   };
 
@@ -149,8 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
     enableRTL();
   }
 
-  if (rtlToggle) {
-    rtlToggle.addEventListener('click', (e) => {
+  rtlToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
       e.preventDefault();
       if (document.documentElement.getAttribute('dir') === 'rtl') {
         disableRTL();
@@ -158,7 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
         enableRTL();
       }
     });
-  }
+  });
+
+  // Sync RTL state across tabs
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'rtl') {
+      if (e.newValue === 'true') {
+        enableRTL();
+      } else {
+        disableRTL();
+      }
+    }
+  });
 
   // Smooth Scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -186,4 +214,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isAlreadyActive) currentItem.classList.add('active');
     });
   });
+
+  // Scroll Up Button Logic
+  const scrollUpBtn = document.getElementById('scroll-up');
+
+  if (scrollUpBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollUpBtn.classList.add('show');
+      } else {
+        scrollUpBtn.classList.remove('show');
+      }
+    });
+
+    scrollUpBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });

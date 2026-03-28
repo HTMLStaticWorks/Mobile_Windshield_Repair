@@ -14,29 +14,23 @@ body {
     right: -100%;
     width: 280px;
     height: 100vh;
+    overflow-y: auto;
     background: var(--dark-surface);
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
     z-index: 1000;
     transition: 0.4s ease-in-out;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
   }
 
-  [dir="rtl"] .nav-links {
-    right: auto;
-    left: -100%;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
-  }
+
 
   .nav-links.active {
     right: 0;
   }
 
-  [dir="rtl"] .nav-links.active {
-    right: auto;
-    left: 0;
-  }
+
 
   .nav-links li {
     width: 100%;
@@ -137,6 +131,18 @@ body {
   .newsletter form .btn {
     width: 100% !important;
   }
+
+  /* Story Section Fix */
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+
+  .story-img {
+    height: 300px !important;
+    margin: 0 auto !important;
+  }
 }
 
 /* 2. Tablet (577px – 1024px) */
@@ -147,6 +153,7 @@ body {
     right: -100%;
     width: 320px;
     height: 100vh;
+    overflow-y: auto;
     background: var(--dark-surface);
     flex-direction: column;
     justify-content: center;
@@ -155,13 +162,13 @@ body {
     transition: 0.4s ease-in-out;
   }
 
-  .nav-links.active {
-    right: 0;
-  }
-
   [dir="rtl"] .nav-links {
     right: auto;
     left: -100%;
+  }
+
+  .nav-links.active {
+    right: 0;
   }
 
   [dir="rtl"] .nav-links.active {
@@ -232,115 +239,20 @@ body {
 }
 
 /* 4. Layout Fix: 4th Card Centering (3-column state) */
-@media (min-width: 821px) and (max-width: 1024px) {
+@media (min-width: 821px) {
 
   .process .card-grid,
-  .stats .card-grid {
+  .stats .card-grid,
+  .values .card-grid,
+  .team .card-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 
   .process .card:nth-child(4),
-  .stats .stat-item:nth-child(4) {
+  .stats .stat-item:nth-child(4),
+  .values .card:nth-child(4),
+  .team .card:nth-child(4) {
     grid-column: 2;
     /* Centers the 4th card in a 3-column grid */
-  }
-}
-
-/* 5. Mobile RTL Alignment Fix (max-width: 768px) */
-@media (max-width: 768px) {
-
-  .navbar,
-  .right-controls {
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  .nav-links {
-    display: flex !important;
-    position: fixed !important;
-    top: 70px !important;
-    width: 280px !important;
-    height: calc(100vh - 70px) !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    padding: 3rem 1.5rem !important;
-    gap: 20px !important;
-    margin-left: auto !important;
-    transition: 0.4s ease-in-out !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .nav-links li {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  .nav-links a {
-    display: inline-block !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  .nav-links>* {
-    flex-shrink: 0 !important;
-  }
-
-  [dir="rtl"] .nav-links {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
-
-  /* Prevent body scroll when menu is open */
-  body.menu-open {
-    overflow: hidden !important;
-  }
-
-  .right-controls {
-    gap: 12px !important;
-  }
-
-  [dir="rtl"] .right-controls {
-    flex-direction: row !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  body[dir="rtl"] * {
-    box-sizing: border-box !important;
-  }
-
-  .mobile-stack {
-    flex-direction: column !important;
-  }
-
-  .mobile-stack .stack-img {
-    width: 100% !important;
-    height: 250px !important;
-  }
-
-  .mobile-stack .stack-body {
-    width: 100% !important;
-    padding: 1.5rem !important;
-  }
-
-  .mobile-stack .btn-wrapper {
-    justify-content: center !important;
-  }
-
-  /* FAQ Mobile Alignment Fix */
-  .faq-premium-header {
-    padding: 1.25rem 1rem !important;
-    gap: 1rem !important;
-  }
-
-  .faq-premium-header h4 {
-    font-size: 1.1rem !important;
-  }
-
-  .faq-toggle-icon {
-    width: 30px !important;
-    height: 30px !important;
   }
 }

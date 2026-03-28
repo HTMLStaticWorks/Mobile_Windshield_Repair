@@ -1,234 +1,85 @@
-/* ==========================================================================
-   Comprehensive RTL (Right-to-Left) Styles
-   ========================================================================== */
+/* 
+    RTL Stylesheet - Mobile Windshield Repair 
+    Mirrors the UI for Right-to-Left languages.
+*/
 
-/* 1. Global & Typography */
 [dir="rtl"] {
-    direction: rtl;
+  text-align: right;
+  direction: rtl;
 }
 
-[dir="rtl"] body {
-    text-align: right;
-    font-family: 'Inter', 'Poppins', sans-serif;
-}
-
-[dir="rtl"] h1, 
-[dir="rtl"] h2, 
-[dir="rtl"] h3,
-[dir="rtl"] h4,
-[dir="rtl"] .section-title h2,
-[dir="rtl"] .section-title p,
-[dir="rtl"] .card-title {
-    text-align: center !important;
-}
-
-/* 2. Navbar & Navigation */
-[dir="rtl"] .navbar {
-    flex-direction: row !important; /* Keep row, but direction handles the flip */
-}
-
-[dir="rtl"] .nav-brand {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-}
-
+/* Nav Mirroring */
 [dir="rtl"] .nav-links {
-    margin-left: 0 !important;
-    margin-right: 3.5rem !important;
+  margin-left: unset;
+  margin-right: auto;
 }
 
 [dir="rtl"] .right-controls {
-    margin-left: 0 !important;
-    margin-right: auto !important;
+  margin-left: 0;
+  margin-right: 20px;
 }
 
-/* Mobile Drawer (Responsive Navbar) */
-@media (max-width: 1024px) {
-    [dir="rtl"] .nav-links {
-        left: auto !important;
-        right: -100% !important;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    [dir="rtl"] .nav-links.active {
-        right: 0 !important;
-        left: auto !important;
-    }
-
-    [dir="rtl"] .nav-links li {
-        text-align: right;
-    }
+[dir="rtl"] .nav-brand {
+    flex-direction: row-reverse;
 }
 
-/* 3. Hero & Content Sections */
+/* Hero Section Mirroring */
 [dir="rtl"] .hero-content {
-    text-align: right;
+  text-align: right;
 }
 
+/* Statistics and Stats Sections */
+[dir="rtl"] .section.stats {
+  direction: rtl;
+  text-align: center;
+}
+
+/* Section Title Centers */
 [dir="rtl"] .section-title {
-    text-align: center; /* Titles usually stay centered */
+  text-align: center;
 }
 
-[dir="rtl"] .btn-wrapper {
-    justify-content: flex-start;
+/* Story/Overview Grid Alignment */
+[dir="rtl"] .story-grid {
+  direction: rtl;
 }
 
-/* 4. Cards & Grid Work */
-[dir="rtl"] .card {
-    text-align: right;
+/* Footer Section Mirroring */
+[dir="rtl"] footer {
+  text-align: right;
 }
 
-[dir="rtl"] .card-body {
-    text-align: right;
-}
-
-/* Horizontal Cards (Special case in home2.html) */
-[dir="rtl"] [style*="flex-direction: row"] {
-    flex-direction: row !important; /* RTL handles mirroring naturally if we allow it */
-}
-
-[dir="rtl"] [style*="flex-direction: row-reverse"] {
-    flex-direction: row-reverse !important;
-}
-
-/* 5. Specific Page Sections */
-/* Featured Post & Horizontal Cards */
-[dir="rtl"] .featured-post .card,
-[dir="rtl"] .services-list .card {
-    flex-direction: row !important;
-}
-
-[dir="rtl"] .featured-post .card-body,
-[dir="rtl"] .services-list .card-body {
-    text-align: right !important;
-}
-
-/* Newsletter & Forms */
-[dir="rtl"] .newsletter form {
-    flex-direction: row;
-}
-
-[dir="rtl"] .claim-form .card {
-    text-align: right !important;
-}
-
-[dir="rtl"] .form-group input,
-[dir="rtl"] .form-group select,
-[dir="rtl"] .form-group textarea {
-    text-align: right;
-}
-
-[dir="rtl"] .form-group {
-    text-align: right !important;
-}
-
-/* Specific Page Overrides */
-[dir="rtl"] .contact-main-grid {
-    grid-template-columns: 0.8fr 1.2fr !important; /* Flip column widths */
-}
-
-[dir="rtl"] .newsletter input {
-    text-align: right;
-}
-
-/* 6. Components: FAQ, Stats, Testimonials */
-[dir="rtl"] .faq-premium-header {
-    flex-direction: row; /* Let RTL handle it */
-}
-
-[dir="rtl"] .faq-premium-content {
-    padding: 0 4.8rem 0 2rem !important;
-}
-
-[dir="rtl"] .stat-item, 
-[dir="rtl"] .stat-card {
-    text-align: center;
-}
-
-[dir="rtl"] .stars {
-    display: flex;
-    justify-content: flex-start;
-    gap: 0.25rem;
-}
-
-/* 6. Footer */
-[dir="rtl"] .footer-grid {
-    text-align: right;
-}
-
-[dir="rtl"] .footer-column {
-    text-align: right;
-}
-
-[dir="rtl"] .footer-links a:hover {
-    padding-left: 0;
-    padding-right: 5px;
+[dir="rtl"] .footer-links {
+  padding: 0;
 }
 
 [dir="rtl"] .social-links {
-    justify-content: flex-start;
+  justify-content: flex-end;
 }
 
-[dir="rtl"] .copyright-bar {
-    text-align: center;
+/* Logical Padding and Margins Override (where shorthand is used) */
+[dir="rtl"] .btn {
+  /* No specific flip needed if centered, but if aligned: */
 }
 
-/* 7. Dashboard Specifics */
+/* Specific Grid and Flex layouts that use left/right bias */
+[dir="rtl"] .nav-btn {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Mobile Sidebar RTL */
 [dir="rtl"] .dashboard-sidebar {
-    left: auto !important;
-    right: 0 !important;
-    box-shadow: -4px 0 10px rgba(0,0,0,0.1) !important;
+  left: auto;
+  right: -280px;
 }
 
-[dir="rtl"] .main-content {
-    margin-left: 0 !important;
-    margin-right: 280px !important;
+[dir="rtl"] .dashboard-sidebar.active {
+  left: auto;
+  right: 0;
 }
 
-@media (max-width: 1024px) {
-    [dir="rtl"] .dashboard-sidebar {
-        right: -280px !important;
-        left: auto !important;
-        transform: translateX(0) !important;
-    }
-
-    [dir="rtl"] .dashboard-sidebar.active {
-        right: 0 !important;
-    }
-
-    [dir="rtl"] .main-content {
-        margin-right: 0 !important;
-    }
-}
-
-/* 8. Utility Flips */
-[dir="rtl"] .ml-auto {
-    margin-right: auto !important;
-    margin-left: 0 !important;
-}
-
-[dir="rtl"] .mr-2 {
-    margin-left: 0.5rem !important;
-    margin-right: 0 !important;
-}
-
-[dir="rtl"] .mr-3 {
-    margin-left: 0.75rem !important;
-    margin-right: 0 !important;
-}
-
-/* 9. Directional Icons */
-[dir="rtl"] .fa-chevron-right::before { content: "\f053"; } /* Left chevron */
-[dir="rtl"] .fa-chevron-left::before { content: "\f054"; }  /* Right chevron */
-[dir="rtl"] .fa-arrow-right::before { content: "\f060"; }   /* Left arrow */
-[dir="rtl"] .fa-arrow-left::before { content: "\f061"; }    /* Right arrow */
-[dir="rtl"] .fa-angle-right::before { content: "\f104"; }   /* Angle left */
-[dir="rtl"] .fa-angle-left::before { content: "\f105"; }    /* Angle right */
-
-[dir="rtl"] .fa-phone,
-[dir="rtl"] .fa-envelope,
-[dir="rtl"] .fa-map-marker-alt,
-[dir="rtl"] .fa-clock {
-    margin-left: 0.5rem;
-    margin-right: 0;
+[dir="rtl"] .mobile-toggle {
+    margin-left: 0;
+    margin-right: 15px;
 }
