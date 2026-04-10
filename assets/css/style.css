@@ -397,6 +397,9 @@ section {
   max-width: 1200px;
   margin: 0 auto;
 }
+.card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .card {
   background: var(--card-bg);
@@ -861,4 +864,30 @@ footer {
     width: 45px;
     height: 45px;
   }
+}
+
+/* --- Section 6: Layout Fix for 3rd Grid (Approved Text) --- */
+.status-approved-card .approved-icon {
+    object-fit: contain !important;
+    padding: 10px 10% !important; /* Prevents edge-to-edge stretching of the icon */
+    background: transparent;
+    height: 250px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.status-approved-card .card-body {
+    padding-top: 0.5rem !important; /* Reduced top padding to move title closer to the "APPROVED" banner */
+    text-align: center;
+}
+
+.status-approved-card .card-title {
+    margin-top: 0 !important;
+    font-weight: 700;
+}
+
+/* Ensure the "APPROVED" text in the image is perfectly centered horizontally */
+.status-approved-card {
+    align-items: center;
 }

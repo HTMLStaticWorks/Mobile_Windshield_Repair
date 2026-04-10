@@ -111,7 +111,7 @@ body {
   }
 
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   /* Featured Post Mobile */

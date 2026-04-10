@@ -243,6 +243,45 @@
             padding: 2.5rem 3rem;
             transition: all 0.4s ease;
             max-width: 100%;
+            position: relative;
+        }
+
+        /* Top Controls Styling */
+        .dashboard-top-controls {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            width: 42px;
+            height: 42px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .control-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(29, 158, 117, 0.3);
+        }
+
+        .control-btn i {
+            font-size: 1.1rem;
         }
 
 
@@ -314,6 +353,13 @@
                 padding: 6rem 1.5rem 2rem;
             }
 
+            .dashboard-top-controls {
+                top: 1.25rem;
+                right: 1.5rem;
+                position: fixed;
+                z-index: 1060;
+            }
+
             [dir="rtl"] .main-content {
                 margin-left: 0;
                 margin-right: 0;
@@ -365,6 +411,10 @@
             [dir="rtl"] .dashboard-header-mobile {
                 left: auto;
                 right: 15px;
+            }
+            [dir="rtl"] .dashboard-top-controls {
+                right: auto;
+                left: 1.5rem;
             }
         }
 
@@ -767,8 +817,6 @@
                 <li><a onclick="switchTab('messages', this)"><i class="fas fa-comments"></i> Messages</a></li>
                 <li><a onclick="switchTab('billing', this)"><i class="fas fa-credit-card"></i> Billing</a></li>
                 <li><a onclick="switchTab('settings', this)"><i class="fas fa-user-cog"></i> Settings</a></li>
-                <li><a id="rtl-toggle"><i class="fas fa-language"></i> <span>RTL</span></a></li>
-                <li><a class="theme-toggle"><i class="fas fa-moon"></i> <span>Dark Mode</span></a></li>
             </ul>
         </div>
 
@@ -781,6 +829,17 @@
 
     <!-- Main Content -->
     <main class="main-content">
+
+        <div class="dashboard-top-controls">
+            <a id="rtl-toggle" class="control-btn" title="Toggle RTL">
+                <i class="fas fa-language"></i>
+                <span class="sr-only" style="display: none;">RTL</span>
+            </a>
+            <a class="theme-toggle control-btn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <span class="sr-only" style="display: none;">Dark Mode</span>
+            </a>
+        </div>
 
         <!-- Overview Section -->
         <section id="overview" class="content-section active">
