@@ -376,3 +376,12 @@ body {
     /* Centers the 4th card in a 3-column grid */
   }
 }
+
+/* 5. Desktop High Resolution (1440px and 2560px) - Home 2 Specific */
+@media (min-width: 1440px) {
+  .pricing .card:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 1rem);
+  }
+}
